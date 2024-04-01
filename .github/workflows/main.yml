@@ -19,5 +19,6 @@ jobs:
       - name: Install dependencies
         run : pipenv install
         
-      - name : Run tests 
+      - name : Run tests
+        working-directory: NextShop
         run : pipenv run pytest --ds=config.settings
