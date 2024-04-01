@@ -20,5 +20,4 @@ jobs:
         run : pipenv install
         
       - name : Run tests 
-        working-directory: ./nextshop
         run : pipenv run pytest --ds=config.settings
