@@ -1,7 +1,14 @@
 import factory
 import os
 
-from ..models import Product
+from ..models import Product, Category
+
+
+class CategoryFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = Category
+
+    name = factory.Faker('sentence', nb_words=1)
 
 
 class ProductFactory(factory.django.DjangoModelFactory):
@@ -12,6 +19,7 @@ class ProductFactory(factory.django.DjangoModelFactory):
     name = factory.Faker('sentence', nb_words=4)
     slug = factory.Sequence(lambda n: 'product-{}'.format(n))
     description = factory.Faker('paragraph', nb_sentences=3)
+    category = factory.SubFactory(CategoryFactory)
     price = factory.Faker('random_number', digits=2, fix_len=True)
     stock = factory.Faker('random_int', min=0, max=100)
     image = factory.django.ImageField(filename='test_image.jpg')
