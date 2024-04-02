@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 django = "==4.2.11"
 djangorestframework = "==3.15.1"
+pillow = "*"
 
 [dev-packages]
 pytest = "==8.1.1"
