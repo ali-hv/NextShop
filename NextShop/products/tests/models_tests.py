@@ -10,3 +10,6 @@ class ProductModelTest(TestCase):
 
     def test_product_creation(self):
         self.assertTrue(isinstance(self.product, Product))
+
+    def test_product_str_representation(self):
+        self.assertEqual(str(self.product), self.product.name)
