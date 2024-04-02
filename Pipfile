@@ -6,10 +6,11 @@ name = "pypi"
 [packages]
 django = "==4.2.11"
 djangorestframework = "==3.15.1"
-pytest = "*"
-pytest-django = "*"
 
 [dev-packages]
+pytest = "==8.1.1"
+pytest-django = "==4.8.0"
+factory-boy = "==3.3.0"
 
 [requires]
 python_version = "3.11"
