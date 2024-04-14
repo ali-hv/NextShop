@@ -5,13 +5,13 @@ from .permissions import IsStaffOrReadOnly
 from .models import Product
 
 
-class ListProduct(generics.ListCreateAPIView):
+class ProductList(generics.ListCreateAPIView):
     permission_classes = (IsStaffOrReadOnly,)
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
 
 
-class DetailProduct(generics.RetrieveUpdateDestroyAPIView):
+class ProductDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = (IsStaffOrReadOnly,)
     queryset = Product.objects.all()
     serializer_class = ProductSerializer

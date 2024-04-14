@@ -18,7 +18,7 @@ class ProductViewsTest(TestCase):
 
     def test_list_products(self):
         # Make a GET request to ListProduct view
-        response = self.client.get(reverse("products:products_list"))
+        response = self.client.get(reverse("products:product_list"))
 
         # Check that the response status code is 200 OK
         self.assertEqual(response.status_code, status.HTTP_200_OK)
@@ -38,7 +38,7 @@ class ProductViewsTest(TestCase):
         Product.objects.all().delete()
 
         # Make a GET request to ListProduct view when there are no products
-        response = self.client.get(reverse("products:products_list"))
+        response = self.client.get(reverse("products:product_list"))
 
         # Check that the response status code is 200 OK
         self.assertEqual(response.status_code, status.HTTP_200_OK)
